@@ -1,0 +1,25 @@
+From 5861817bb21f6f7174067aac09184657f4e8f60f Mon Sep 17 00:00:00 2001
+From: Robert Nelson <robertcnelson@gmail.com>
+Date: Thu, 10 Nov 2016 15:36:06 -0600
+Subject: [PATCH] debian: -fno-PIE
+
+Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
+---
+ temperature_module/temperature-mod/Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/temperature_module/temperature-mod/Makefile b/temperature_module/temperature-mod/Makefile
+index 8bd7238..fbc511e 100644
+--- a/temperature_module/temperature-mod/Makefile
++++ b/temperature_module/temperature-mod/Makefile
+@@ -16,6 +16,7 @@
+ #
+ 
+ obj-m := temperature_kmodule.o
++CFLAGS_temperature_kmodule.o := -fno-PIE
+ 
+ KVERSION ?= $(shell uname -r)
+ KERNEL_SRC  ?= /lib/modules/$(KVERSION)/build
+-- 
+2.10.2
+
